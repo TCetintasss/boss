@@ -1,0 +1,171 @@
+/* Base styling for TAPTAP BOSS */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #0d0c1d;
+  color: #e0e0e0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#game-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  color: #00ffc3;
+  text-shadow: 0 0 10px rgba(0, 255, 195, 0.7);
+}
+
+#stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#enemy-container {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  height: 200px;
+  background: radial-gradient(circle at center, #1a1835 0%, #0d0c1d 80%);
+  border: 2px solid #28244c;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#enemy {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #3d3f88, #6c6ecf);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 15px rgba(108, 110, 207, 0.8);
+}
+
+/* HP bar */
+#hp-bar-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: #33334d;
+}
+
+#hp-bar {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #00ff99, #00b3ff);
+  transition: width 0.1s linear;
+}
+
+#tap-button {
+  width: 80%;
+  max-width: 400px;
+  padding: 1rem;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #5c27c1, #3b009e);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(92, 39, 193, 0.6);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.05s ease, box-shadow 0.2s ease;
+}
+
+#tap-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 30px rgba(92, 39, 193, 0.9);
+}
+
+#log {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.damage-popup {
+  position: absolute;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff4a6e;
+  text-shadow: 0 0 10px rgba(255, 74, 110, 0.8);
+  animation: popUp 1s forwards;
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+/* Screen shake animation */
+.shake {
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% { transform: translate(0px, 0px); }
+  20% { transform: translate(-5px, 3px); }
+  40% { transform: translate(5px, -3px); }
+  60% { transform: translate(-3px, 5px); }
+  80% { transform: translate(3px, -5px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+footer button {
+  padding: 0.5rem 1rem;
+  background: #0048ba;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+footer button:hover {
+  background: #006ddb;
+}

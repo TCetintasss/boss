@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TAPTAP BOSS</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Socket.IO client -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div id="game-root">
+    <header>
+      <h1>TAPTAP BOSS</h1>
+      <div id="stats">
+        <span id="stage">Stage: 1</span>
+        <span id="hp">HP: 10</span>
+        <span id="gold">Gold: 0</span>
+        <span id="crystals">Crystals: 0</span>
+      </div>
+    </header>
+    <main>
+      <div id="enemy-container">
+        <div id="enemy">
+          <!-- Enemy representation -->
+        </div>
+        <div id="hp-bar-container">
+          <div id="hp-bar"></div>
+        </div>
+      </div>
+      <button id="tap-button">TAP</button>
+      <div id="log"></div>
+    </main>
+    <footer>
+      <button id="upgrade-btn">Upgrade Damage (Cost: 10)</button>
+      <button id="prestige-btn">Prestige</button>
+    </footer>
+  </div>
+</body>
+</html>
